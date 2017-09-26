@@ -1,8 +1,5 @@
 <?php
-$host = 'localhost';
-$dbname = 'krivoshein';
-$dbuser = 'krivoshein';
-$dbpassword = 'neto1229';
+
 require 'core.php';
 if (empty($_SESSION['user']['id'])) {
 		header('Location: ./register.php');
@@ -103,7 +100,7 @@ $statementMyList->execute(["{$_SESSION['user']['id']}"]);
 				<th></th>
 				<th>Ответственный</th>
 				<th>Автор</th>
-				<th>Закрепить задачу за пользователем</th>
+				<th>Делигировать задачу пользователю</th>
 			</tr>
 			<?php foreach ($statement as $row) { ?>
 			<tr>
@@ -111,9 +108,9 @@ $statementMyList->execute(["{$_SESSION['user']['id']}"]);
 
 				<td><?php echo htmlspecialchars($row['date_added']); ?></td>
 
-				<td <?php if ($row['is_done'] == 1) echo 'style="color: green;"'; ?>>
+				<td <?php if ($row['is_done'] == 1) echo 'style="color: blue;"'; ?>>
 				  <?php if ($row['is_done'] == 0) {
-				    echo 'В процессе';
+				    echo 'Обработка';
 				  } else {
 				    echo 'Выполнено';
 				  } ?>
@@ -137,14 +134,14 @@ $statementMyList->execute(["{$_SESSION['user']['id']}"]);
 							<?php } ?>					
 						</select>
 						<input type="hidden" name="id_description" value="<?php echo $row['id_description']; ?>">
-						<input type="submit" name="assign" value="Переложить ответственность">
+						<input type="submit" name="assign" value="Делигировать">
 					</form>
 				</td>
 			</tr>
 			<?php } ?>
 		</table>
 
-		<h3>Также посмотрите, что от вас требуют другие люди:</h3>
+		<h3>Посмотрите, что от вас требуют другие пользователи:</h3>
 
 		<table>
 		  <tr>

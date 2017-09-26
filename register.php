@@ -32,7 +32,7 @@ if (isAuthorization()) {
   <body>
     <form method="POST">
 		  <p><b><?php if (isRegistration()) {
-			  echo 'Ваши данные отправлены! Войдите, используя свой логин и пароль:'; } else if (isAuthorization() && empty($user)) { echo 'Неправильный логин и пароль!'; } else { echo 'Войдите или зарегистрируйтесь:'; } ?></b></p>
+			  echo 'Ваши данные сохраненны! Войдите, используя свой логин и пароль:'; } else if (isAuthorization() && empty($user)) { echo 'Неправильный логин и пароль!'; } else { echo 'Войдите или зарегистрируйтесь:'; } ?></b></p>
       <input name="login" id="login" placeholder="Логин">
       <input name="password" id="password" placeholder="Пароль">
 			<button type="submit" name="registration">Регистрация</button>

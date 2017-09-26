@@ -10,10 +10,10 @@ function isAuthorization() {
 		return (isset($_POST['authorization']) && !empty($_POST['login']) && !empty($_POST['password']));
 }
 function createPDO() {
-		$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8;dbuser=$dbuser;dbpassword=$dbpassword;" 
-     );
-		return $pdo;
-}
+		$pdo = new PDO("mysql:host=localhost;dbname=krivoshein;charset=utf8","krivoshein","neto1229",[
+	  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+	   ]);
+		return $pdo;}
 function getSalt() {
 	return 'РАн5куепкп54';
 }
