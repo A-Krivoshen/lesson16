@@ -1,4 +1,8 @@
 <?php
+$host = 'localhost';
+$dbname = 'krivoshein';
+$dbuser = 'krivoshein';
+$dbpassword = 'neto1229';
 require 'core.php';
 if (empty($_SESSION['user']['id'])) {
 		header('Location: ./register.php');

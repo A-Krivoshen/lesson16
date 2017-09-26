@@ -1,6 +1,6 @@
 <?php 
 $host = 'localhost';
-$dbname = 'global';
+$dbname = 'krivoshein';
 $dbuser = 'krivoshein';
 $dbpassword = 'neto1229';
 function isRegistration() {
@@ -10,9 +10,8 @@ function isAuthorization() {
 		return (isset($_POST['authorization']) && !empty($_POST['login']) && !empty($_POST['password']));
 }
 function createPDO() {
-		$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpassword, [
-	  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
+		$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8;dbuser=$dbuser;dbpassword=$dbpassword;" 
+     );
 		return $pdo;
 }
 function getSalt() {
