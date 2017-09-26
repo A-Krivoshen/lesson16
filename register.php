@@ -31,7 +31,7 @@ if (isAuthorization()) {
   </head>
   <body>
     <form method="POST">
-		  <p style="display: inline-block;"><b><?php if (isRegistration()) {
+		  <p><b><?php if (isRegistration()) {
 			  echo 'Ваши данные отправлены! Войдите, используя свой логин и пароль:'; } else if (isAuthorization() && empty($user)) { echo 'Неправильный логин и пароль!'; } else { echo 'Войдите или зарегистрируйтесь:'; } ?></b></p>
       <input name="login" id="login" placeholder="Логин">
       <input name="password" id="password" placeholder="Пароль">
